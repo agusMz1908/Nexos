@@ -1,0 +1,116 @@
+body{
+  font-family: 'DM Sans';
+}
+
+
+/*MENU DESPLEGABLE MOBILE --------------------------------------------------------------------*/
+.navegacion {
+  display: none;
+}
+
+.navegacion a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.mostrar{display:block;}
+
+/* FIN MENU DESPLEGABLE MOBILE --------------------------------------------------------------------*/
+
+
+/* INICIO MODAL BOX -------------------------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+
+.modal_container.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* FIN MODAL BOX -------------------------------------------------------------------------------*/
+
+
+
+/* INICIO CARRUSEL MOBILE ------------------------------------------------------*/
+
+*{
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.center_y{
+  position: relative;
+  top:40%;
+  transform: translateX(-50%);
+}
+
+.center_x{
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.slider-arrow{
+  position: absolute;
+}
+
+#dots-wrapper{
+  position: absolute;
+}
+
+
+.active-dot{
+  background-color: #fff;
+}
+
+.fade{
+  animation-name: fade;
+  animation-duration: .2s;
+}
+
+@keyframes fade{
+  from {opacity: .4}
+  to { opacity: 1}
+}
+
+/*FIN CARRUSEL MOBILE-----------------------------------------------------*/
+
+/* INICIO ESTILOS SCROLL DE LA SECCION NOTICIAS WEB */
+
+.contenedorScroll {  
+  width:100%;
+  overflow:auto;
+  box-sizing: border-box;
+
+}
+
+.contenedorScroll::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+
+.contenedorScroll::-webkit-scrollbar-button:increment,.contenedorScroll::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.contenedorScroll::-webkit-scrollbar:horizontal {
+  height: 15px;
+}
+
+.contenedorScroll::-webkit-scrollbar-thumb {
+  background-color: #5227CC;
+  border-radius: 10px;
+  
+  
+}
+
+.contenedorScroll::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+/* FIN ESTILOS SCROLL DE LA SECCION NOTICIAS WEB */

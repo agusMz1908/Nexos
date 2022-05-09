@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src=index.js></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/5de4e9b796.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Dancing+Script&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+        <title>NEXOS</title>
+    </head>
+
+    <!-- INICIO BODY -->
+
+    <body>
+
+        <!-- INICIO HEADER -->
+
+        <header>
+
+            <!-- INICIO NAV -->
+
+            <div class="flex justify-between md:px-[100px] md:items-center shadow-2xl">
+                <img src="Materiales/logo.png" class="p-[15px] w-[150px] md:w-[200px] md:hidden">
+                <div class="hidden md:flex md:w-[50%] md:justify-around md:items-center md:font-medium md:h-[100px]">
+                    <img src="Materiales/logo.png" class="w-[150px] md:w-[200px]">
+                    <a href="#nosotros" class="hover:shadow-xl">Nosotros</a>
+                    <a href="#noticiasWeb" class="hover:shadow-xl">Noticias</a>
+                    <a href="#contacto" class="hover:shadow-xl">Ayuda</a>
+                </div>
+                <button class="rounded-xl bg-[#5227CC] text-white text-center w-[100px] h-[30px]  font-bold md:w-[150px] md:h-[40px] md:rounded-3xl hidden md:block hover:bg-[#7749f8]" id="open">INGRESAR</button>
+
+                <!-- INICIO NAV MOBILE -->
+
+                <div class="mobile-menu md:hidden p-[15px]">
+                    <button id="botonMenu"><i class="fa-solid fa-bars text-2xl"></i></button>
+                </div>
+
+                <nav  id="contenedorMenuMobile" style="display:none;" class="text-black navegacion absolute w-full mt-[62px] text-center font-bold bg-white/80 md:hidden shadow-2xl">
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#noticiasMobile">Noticias</a>
+                    <a href="#contacto">Ayuda</a>
+                    <button class=" rounded-xl bg-[#5227CC] text-white text-center w-[100px] h-[30px] my-[20px] font-bold" id="botonModalMobile">Ingresar</button>
+                </nav>
+
+                <!-- FIN NAV MOBILE -->
+
+            </div>
+
+            <!-- FIN NAV -->
+
+            <!-- INICIO MODAL -->
+
+            <div class="modal_container bg-black/75 transition-opacity opacity-0 pointer-events-none w-[100vw] fixed justify-center items-center flex h-[100vh] md:left-0 top-[0]" id="modal_container">
+                <div class="modal bg-white rounded-xl md:w-[1100px] md:h-[600px] m-[20px]">
+                    <section class="bg-white p-[5px] md:p-[0]md:w-[60%] md:h-[630px] flex flex-col md:flex-row rounded-xl border-solid border-white border-[3px]">
+                        <div class="flex p-[10px] justify-end bg-[url('Materiales/imagen-modal.JPG')] md:hidden w-full h-[300px] bg-center bg-cover rounded-xl">
+                            <a href="#"><i class="fa-solid fa-xmark text-4xl text-white pr-[5px]" id="closeMobile"></i></a>
+                        </div>
+                        <img src="Materiales/imagen-modal.JPG" alt="img-modal" class="hidden md:block w-[500px] h-[593px] rounded-xl object-cover">
+                        <div class="flex flex-col justify-center">
+                            <div class="flex justify-between items-center ml-[50px] mb-[30px]">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-arrow-left mr-[10px] hidden md:block"></i>
+                                    <p class="hidden md:block">Volver atras</p>
+                                </div>
+                                <a href="#"><i class="fa-solid fa-xmark text-4xl hidden md:block" id="close"></i></a>
+                            </div>
+                            <div class="flex flex-col items-center md:ml-[50px]">
+                                <h1 class="font-bold text-2xl mb-[30px]">REGISTRAR</h1>
+                                <div class="bg-[#5298FF] flex md:w-[500px] h-[150px] md:h-[200px] rounded-xl mb-[30px] hover:shadow-2xl border-grey-100 border-solid border-[1px]">
+                                    <div class="flex items-center justify-center w-[125px]">
+                                        <img src="Materiales/icono-maletin.png" alt="icono-maletin" class="w-[60px] h-[50px]">
+                                    </div>
+                                    <div class="bg-white w-[75%] flex flex-col p-[25px] md:pl-[50px] justify-center rounded-r-xl">
+                                        <div>
+                                            <h1 class="text-[#5298FF] font-bold text-xl md:text-2xl mb-[15px] md:mb-[30px]">MI EMPRESA</h1>
+                                            <p class="text-xl hidden md:block">Breve explicación a lo que nos<br>referimos.</p>
+                                            <p class="text-xl md:hidden">Breve explicación a lo que nos referimos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-[#7749f8] flex justify-between md:w-[500px] md:h-[200px] h-[150px] rounded-xl hover:shadow-2xl border-grey-100 border-solid border-[1px]">
+                                    <div class="flex items-center justify-center w-[125px]">
+                                        <img src="Materiales/icono-persona.png" alt="icono-maletin" class="w-[50px] h-[50px]">
+                                    </div>
+                                    <div class="bg-white w-[75%] flex flex-col p-[25px] md:pl-[50px] justify-center rounded-r-xl">
+                                        <div>
+                                            <h1 class="text-[#7749f8] font-bold text-xl md:text-2xl mb-[15px] md:mb-[30px]">MI ORGANIZACIÓN</h1>
+                                            <p class="text-xl hidden md:block">Estamos para ayudarlos<br>a tener éxito.</p>
+                                            <p class="text-xl md:hidden">Estamos para ayudarlos a tener éxito.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- FIN MODAL -->
+
+            <!-- IMG HEADER -->
+
+            <section class=" bg-[url('Materiales/manos.jpg')] px-[20px] h-[500px] bg-cover bg-center flex flex-col text-white align-center justify-center md:h-[700px]">
+                <h1 class="text-4xl md:text-2xl font-bold text-center mb-[30px] md:text-[60px] md:font-normal md:mb-[50px]">¡Actúa para cambiar el mundo!</h1>
+                <p class="text-center md:hidden">Fomentamos el vínculo entre empresas y organizaciones civiles para generar un impacto positivo en la sociedad. Descubrí diferentes maneras de involucrar tu organización con la sociedad.</p>
+                <p class="text-center hidden md:block md:text-[20px]">Fomentamos el vínculo entre empresas y organizaciones civiles para generar un<br>impacto positivo en la sociedad.<br>Descubrí diferentes maneras de involucrar tu organización con la sociedad.</p>
+            </section>
+
+            <!-- FIN IMG HEADER -->
+
+        </header>
+
+        <!-- FIN HEADER -->
+
+        <!-- INICIO MAIN -->
+
+        <main class="font-['DM Sans']">
+
+            <!-- INICIO BLOQUE AZUL -->
+
+            <section class="bg-[#5298FF] text-white md:h-[1025px]" id="nosotros">
+                <hr>
+                <div class="flex flex-col md:flex-row md:px-[100px] md:pt-[100px] md:mb-[25px] md:items-center">
+                    <div class="md:w-[50%] md:h-[400px] bg-[url('Materiales/oficina.png')] h-[300px] bg-cover bg-center w-full md:ml-[-10px]"></div>
+                    <div class="mt-[100px] mb-[100px] md:mt-[15px] md:mb-[15px] md:ml-[100px] px-[20px]">
+                        <h1 class="text-2xl font-bold text-center mb-[20px] md:text-left md:text-[40px] font-normal md:mb-[50px]">Soluciones para empresas</h1>
+                        <p class="text-center text-[14px] md:hidden">Generamos un medio para que las empresas se involucren en actividades de responsabilidad social.<br>¡Crea un grupo de voluntarios en tu organización y se parte del cambio!</p>
+                        <p class="text-center hidden md:block md:text-left md:text-[18px]">Generamos un medio para que las empresas se involucren en<br>actividades de responsabilidad social.<br>¡Crea un grupo de voluntarios en tu organización y se parte del<br>cambio!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse md:justify-between md:items-center md:px-[100px]">
+                    <div class="md:w-[50%] md:h-[400px] bg-[url('Materiales/voluntariado.jpg')] h-[300px] bg-cover bg-center w-full md:mr-[-10px]"></div>
+                    <div class="mt-[100px] mb-[100px] md:mt-[15px] md:mb-[15px] md:ml-[100px] px-[20px]">
+                        <h1 class="text-2xl font-bold text-center md:text-left mb-[20px] md:text-[40px] font-normal md:mb-[50px]">Soluciones para organizaciones</h1>
+                        <p class="text-center mb-[15px] md:hidden text-[14px]">Apoyamos a las organizaciones sociales para que alcancen sus objetivos. Ponemos a su disposicion una comunidad de voluntarios dispuestos a apoyarlas en sus necesidades.<br>Equipos de voluntarios por empresas dispuestos a potenciar a potenciar tu impacto en la sociedad.</p>
+                        <p class="text-center mb-[15px] hidden md:block md:text-left md:text-[18px]">Apoyamos a las organizaciones sociales para que alcancen sus<br>objetivos. Ponemos a su disposicion una comunidad de voluntarios<br>dispuestos a apoyarlas en sus necesidades.<br>Equipos de voluntarios por empresas dispuestos a potenciar a potenciar tu<br>impacto en la sociedad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FIN BLOQUE AZUL -->
+
+            <!-- INICIO CUADROS DE COLORES -->
+
+            <section class="pt-[100px] md:px-[150px] md:mb-[100px]">
+                <div class="p-[20px] md:p-[0px] md:p-[0px] md:mb-[50px]">
+                    <h1 class="text-2xl font-bold text-center mb-[30px] md:text-[40px] md:font-normal md:mt-[100px] md:mb-[50px]">Encuentra las mejores oportunidades</h1>
+                    <p class="text-center md:text-[18px] md:hidden">La plataforma cuenta con gran variedad de proyectos locales (sociales, educativos y medioambientales), donde encontrarás el que mejor se adapte a la experiencia que estas buscando.<br>Te ayudamos en la coordinación con la organización de forma simple y rápida.</p>
+                    <p class="text-center md:text-[18px] hidden md:block">La plataforma cuenta con gran variedad de proyectos locales (sociales, educativos y medioambientales), donde<br>encontrarás el que mejor se adapte a la experiencia que estas buscando.<br>Te ayudamos en la coordinación con la organización de forma simple y rápida.</p>
+                </div>
+                <div class="mt-[100px] p-[30px] md:p-[0px] md:flex md:justify-between">
+                    <div class="px-[50px] bg-[#DC3545] rounded-xl mb-[50px] w-[330px] h-[235px] md:w-[350px] md:h-[300px] md:flex flex-col justify-around md:hover-bg-black">
+                        <div class="flex justify-between py-[30px]">
+                            <img src="Materiales/icono-mano.png">
+                            <img src="Materiales/icono-mas.png" class="h-[30px]">
+                        </div>
+                        <div>
+                            <h3 class="text-white pb-[30px] text-4xl">Ser voluntario</h3>
+                        </div>
+                    </div>
+
+                    <div class="px-[50px] bg-[#FF9C07] rounded-xl mb-[50px] w-[330px] h-[235px] md:w-[350px] md:h-[300px] md:flex flex-col justify-around">
+                        <div class="flex justify-between py-[30px]">
+                            <img src="Materiales/icono-mano-corazon.png">
+                            <img src="Materiales/icono-mas.png" class="h-[30px]">
+                        </div>
+                        <div>
+                            <h3 class="text-white pb-[30px] text-4xl">Donar</h3>
+                        </div>
+                    </div>
+
+                    <div class="px-[50px] bg-[#28A745] rounded-xl mb-[50px] w-[330px] h-[235px] md:w-[350px] md:h-[300px] md:flex flex-col justify-around">
+                        <div class="flex justify-between py-[30px]">
+                            <img src="Materiales/icono-reciclar.png">
+                            <img src="Materiales/icono-mas.png" class="h-[30px]">
+                        </div>
+                        <div>
+                            <h3 class="text-white pb-[30px] text-4xl">Reciclar</h3>
+                        </div>
+                    </div>
+
+                    <div class="px-[50px] bg-[#17A2BB] rounded-xl mb-[100px] w-[330px] h-[236px]md:w-[350px] md:h-[300px] md:flex flex-col justify-around">
+                        <div class="flex justify-between py-[30px]">
+                            <img src="Materiales/icono-maletin.png">
+                            <img src="Materiales/icono-mas.png" class="h-[30px]">
+                        </div>
+                        <div>
+                            <h3 class="text-white pb-[30px] text-4xl">Llamados laborales</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FIN CUADRO DE COLORES -->
+
+            <!-- INICIO NOTICIAS WEB-->
+
+            <section class="bg-[#5298FF] hidden md:block" id="noticiasWeb">
+                <div class="pb-[30px] text-center text-white">
+                    <h1 class="text-4xl pb-[15px] pt-[100px]">Noticias</h1>
+                    <a href="#">Ver todas</a>
+                </div>
+
+                <!-- INICIO SLIDE WEB -->
+
+                <div class="overflow-x-scroll contenedorScroll">
+                    <div class="flex px-[150px] bg-[#5298FF] h-[700px] w-[151%] items-center justify-between contenedorScroll">
+                        <div class="w-[380px] bg-white h-[550px] rounded-xl">
+                            <div class="bg-[url('Materiales/img1.jpg')] p-[20px] w-full h-[280px] bg-cover bg-center rounded-xl flex items-end">
+                                <p class="rounded-xl bg-[#5227CC] text-white text-center w-[80px] font-bold rounded-3xl">Lorem</p>
+                            </div>
+                            <div class="p-[20px] flex justify-between">
+                                <div class="flex">
+                                    <img src="Materiales/icono-calendario.png" class="w-[20px] mr-[10px]"></img>
+                                    <p>10/08/2021</p>
+                                </div>
+                                <div class="flex">
+                                    <img src="Materiales/icono-reloj.png" class="w-[25px] mr-[10px]"></img>
+                                    <p>4min</p>
+                                </div>
+                            </div>
+                            <div class="p-[20px]">
+                                <h1 class="font-bold mb-[30px]">Lorem ipsum dolor sit amet</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci quia veritatis...</p>
+                                <div class="flex justify-end items-center mt-[20px]">
+                                    <img src="Materiales/icono-flecha.png" alt="flecha-icon" class="h-[15px] mr-[10px]">
+                                    <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank">ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[380px] bg-white h-[550px] rounded-xl">
+                            <div class="bg-[url('Materiales/img2.jpg')] p-[20px] w-full h-[280px] bg-cover bg-center rounded-xl flex items-end">
+                                <p class="rounded-xl bg-[#5227CC] text-white text-center w-[80px] font-bold rounded-3xl">Lorem</p>
+                            </div>
+                            <div class="p-[20px] flex justify-between">
+                                <div class="flex">
+                                    <img src="Materiales/icono-calendario.png" class="w-[20px] mr-[10px]"></img>
+                                    <p>10/08/2021</p>
+                                </div>
+                                <div class="flex">
+                                    <img src="Materiales/icono-reloj.png" class="w-[25px] mr-[10px]"></img>
+                                    <p>4min</p>
+                                </div>
+                            </div>
+                            <div class="p-[20px]">
+                                <h1 class="font-bold mb-[30px]">Lorem ipsum dolor sit amet</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci quia veritatis...</p>
+                                <div class="flex justify-end items-center mt-[20px]">
+                                    <img src="Materiales/icono-flecha.png" alt="flecha-icon" class="h-[15px] mr-[10px]">
+                                    <a href="https://www.pexels.com/es-es/foto/carretera-coche-vehiculo-larga-exposicion-9864031/" target="_blank">ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[380px] bg-white h-[550px] rounded-xl">
+                            <div class="bg-[url('Materiales/img3.jpg')] p-[20px] w-full h-[280px] bg-cover bg-center rounded-xl flex items-end">
+                                <p class="rounded-xl bg-[#5227CC] text-white text-center w-[80px] font-bold rounded-3xl">Lorem</p>
+                            </div>
+                            <div class="p-[20px] flex justify-between">
+                                <div class="flex">
+                                    <img src="Materiales/icono-calendario.png" class="w-[20px] mr-[10px]"></img>
+                                    <p>10/08/2021</p>
+                                </div>
+                                <div class="flex">
+                                    <img src="Materiales/icono-reloj.png" class="w-[25px] mr-[10px]"></img>
+                                    <p>3min</p>
+                                </div>
+                            </div>
+                            <div class="p-[20px]">
+                                <h1 class="font-bold mb-[30px]">Lorem ipsum dolor sit amet</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci quia veritatis...</p>
+                                <div class="flex justify-end items-center mt-[20px]">
+                                    <img src="Materiales/icono-flecha.png" alt="flecha-icon" class="h-[15px] mr-[10px]">
+                                    <a href="https://www.pexels.com/es-es/foto/comida-postre-pasta-tiro-vertical-11031106/" target="_blank">ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[380px] bg-white h-[550px] rounded-xl">
+                            <div class="bg-[url('Materiales/img4.jpg')] p-[20px] w-full h-[280px] bg-cover bg-center rounded-xl flex items-end">
+                                <p class="rounded-xl bg-[#5227CC] text-white text-center w-[80px] font-bold rounded-3xl">Lorem</p>
+                            </div>
+                            <div class="p-[20px] flex justify-between">
+                                <div class="flex">
+                                    <img src="Materiales/icono-calendario.png" class="w-[20px] mr-[10px] mr-[10px]"></img>
+                                    <p>10/08/2021</p>
+                                </div>
+                                <div class="flex">
+                                    <img src="Materiales/icono-reloj.png" class="w-[25px] mr-[10px]"></img>
+                                    <p>5min</p>
+                                </div>
+                            </div>
+                            <div class="p-[20px]">
+                                <h1 class="font-bold mb-[30px]">Lorem ipsum dolor sit amet</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci quia veritatis...</p>
+                                <div class="flex justify-end items-center mt-[20px]">
+                                    <img src="Materiales/icono-flecha.png" alt="flecha-icon" class="h-[15px] mr-[10px]">
+                                    <a href="https://www.pexels.com/es-es/foto/ligero-ciudad-hombre-gente-10800108/" target="_blank">ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[380px] bg-white h-[550px] rounded-xl">
+                            <div class="bg-[url('Materiales/img5.jpg')] p-[20px] w-full h-[280px] bg-cover bg-center rounded-xl flex items-end">
+                                <p class="rounded-xl bg-[#5227CC] text-white text-center w-[80px] font-bold rounded-3xl">Lorem</p>
+                            </div>
+                            <div class="p-[20px] flex justify-between">
+                                <div class="flex">
+                                    <img src="Materiales/icono-calendario.png" class="w-[20px] mr-[10px] mr-[10px]"></img>
+                                    <p>10/08/2021</p>
+                                </div>
+                                <div class="flex">
+                                    <img src="Materiales/icono-reloj.png" class="w-[25px] mr-[10px]"></img>
+                                    <p>5min</p>
+                                </div>
+                            </div>
+                            <div class="p-[20px]">
+                                <h1 class="font-bold mb-[30px]">Lorem ipsum dolor sit amet</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci quia veritatis...</p>
+                                <div class="flex justify-end items-center mt-[20px]">
+                                    <img src="Materiales/icono-flecha.png" alt="flecha-icon" class="h-[15px] mr-[10px]">
+                                    <a href="https://www.pexels.com/es-es/foto/playa-gente-costa-tiro-vertical-11887829/" target="_blank">ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[380px] bg-white h-[550px] rounded-xl">
+                            <div class="bg-[url('Materiales/img6.jpg')] p-[20px] w-full h-[280px] bg-cover bg-center rounded-xl flex items-end">
+                                <p class="rounded-xl bg-[#5227CC] text-white text-center w-[80px] font-bold rounded-3xl">Lorem</p>
+                            </div>
+                            <div class="p-[20px] flex justify-between">
+                                <div class="flex">
+                                    <img src="Materiales/icono-calendario.png" class="w-[20px] mr-[10px] mr-[10px]"></img>
+                                    <p>10/08/2021</p>
+                                </div>
+                                <div class="flex">
+                                    <img src="Materiales/icono-reloj.png" class="w-[25px] mr-[10px]"></img>
+                                    <p>5min</p>
+                                </div>
+                            </div>
+                            <div class="p-[20px]">
+                                <h1 class="font-bold mb-[30px]">Lorem ipsum dolor sit amet</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, adipisci quia veritatis...</p>
+                                <div class="flex justify-end items-center mt-[20px]">
+                                    <img src="Materiales/icono-flecha.png" alt="flecha-icon" class="h-[15px] mr-[10px]">
+                                    <a href="https://www.pexels.com/es-es/foto/paisaje-arboles-viaje-ruta-9134625/" target="_blank">ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FIN SLIDE WEB -->
+                
+            </section>
+            
+            <!-- FIN NOTICIAS WEB -->
+            
+            <!-- INICIO NOTICIAS MOBILE -->
+            
+            <section class="bg-[#5298FF] text-white md:hidden flex flex-col items-center pb-[20px]" id="noticiasMobile">
+                <div class="pb-[30px] text-center">
+                    <h1 class="mt-[100px] text-4xl pb-[15px] pt-[30px]">Noticias</h1>
+                    <a href="#">Ver todas</a>
+                </div>
+
+                <section id="slider-container" class="w-[370px] h-[370px] overflow-hidden relative mt-[100px] mb-[100px]">
+                    <div id="slide-0" class="slide w-full h-[100%] absolute fade">
+                        <div class="numbertext text-[#f2f2f2] text-[12px] pt-[8px] pl-[12px] absolute top-0">1 / 6</div>
+                        <img src="Materiales/img1.jpg" alt="Img 0" class="w-full h-[100%] object-cover">
+                        <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank" class="text text-[#f2f2f2] pb-[50px] ml-[140px] absolute bottom-[8px] text-center text-2xl">Noticia 1</a>
+                    </div>
+
+                    <div id="slide-1" class="slide fade">
+                        <div class="numbertext text-[#f2f2f2] text-[12px] pt-[8px] pl-[12px] absolute top-0">2 / 6</div>
+                        <img src="Materiales/img2.jpg" alt="Img 1">
+                        <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank" class="text text-[#f2f2f2] pb-[50px] ml-[140px] absolute bottom-[8px] text-center text-2xl">Noticia 2</a>
+                    </div>
+
+                    <div id="slide-2" class="slide fade">
+                        <div class="numbertext text-[#f2f2f2] text-[12px] pt-[8px] pl-[12px] absolute top-0">3 / 6</div>
+                        <img src="Materiales/img3.jpg" alt="Img 2">
+                        <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank" class="text text-[#f2f2f2] pb-[50px] ml-[140px] absolute bottom-[8px] text-center text-2xl">Noticia 3</a>
+                    </div>
+
+                    <div id="slide-3" class="slide fade">
+                        <div class="numbertext text-[#f2f2f2] text-[12px] pt-[8px] pl-[12px] absolute top-0">4 / 6</div>
+                        <img src="Materiales/img4.jpg" alt="Img 2">
+                        <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank" class="text text-[#f2f2f2] pb-[50px] ml-[140px] absolute bottom-[8px] text-center text-2xl">Noticia 4</a>
+                    </div>
+
+                    <div id="slide-4" class="slide fade">
+                        <div class="numbertext text-[#f2f2f2] text-[12px] pt-[8px] pl-[12px] absolute top-0">5 / 6</div>
+                        <img src="Materiales/img5.jpg" alt="Img 2">
+                        <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank" class="text text-[#f2f2f2] pb-[50px] ml-[140px] absolute bottom-[8px] text-center  text-2xl">Noticia 5</a>
+                    </div>
+
+                    <div id="slide-5" class="slide fade">
+                        <div class="numbertext text-[#f2f2f2] text-[12px] pt-[8px] pl-[12px] absolute top-0">6 / 6</div>
+                        <img src="Materiales/img6.jpg" alt="Img 2">
+                        <a href="https://www.pexels.com/es-es/foto/ciudad-arte-edificio-arquitectura-9221328/" target="_blank" class="text text-[#f2f2f2] pb-[50px] ml-[140px] absolute bottom-[8px] text-center text-2xl">Noticia 6</a>
+                    </div>
+
+                    <div id="arrows-wrapper">
+                        <p id="arrow-prev" class="left-[20px] slider-arrow text-white text-[50px] center_y">
+                          &#10094;
+                        </p>
+                        <p id="arrow-next" class="right-[-5px] slider-arrow text-white text-[50px] center_y">
+                          &#10095;
+                        </p>
+                        <div id="dots-wrapper" class="center_x flex bottom-[30px] ">
+                            <div class="dot-nav w-[15px] h-[15px] rounded-full ml-[10px] border-solid border-[2px] border-[#d6d6d6]"></div>
+                            <div class="dot-nav w-[15px] h-[15px] rounded-full ml-[10px] border-solid border-[2px] border-[#d6d6d6]"></div>
+                            <div class="dot-nav w-[15px] h-[15px] rounded-full ml-[10px] border-solid border-[2px] border-[#d6d6d6]"></div>
+                            <div class="dot-nav w-[15px] h-[15px] rounded-full ml-[10px] border-solid border-[2px] border-[#d6d6d6]"></div>
+                            <div class="dot-nav w-[15px] h-[15px] rounded-full ml-[10px] border-solid border-[2px] border-[#d6d6d6]"></div>
+                            <div class="dot-nav w-[15px] h-[15px] rounded-full ml-[10px] border-solid border-[2px] border-[#d6d6d6]"></div>
+                        </div>
+                      </div>
+                </section>
+            </section>
+
+            <!-- FIN NOTICIAS MOBILE -->
+
+            <!-- INICIO CONTACTO -->
+
+            <section id="contacto" class="md:px-[150px] md:flex md:justify-around md:pt-[100px]">
+                <img src="Materiales/laptop-escritorio.jpg" alt="laptop" class="h-[300px] md:w-[50%] md:h-[350px] object-cover md:pr-[30px] md:mb-[200px]">
+                <div class="flex flex-col items-center md:justify-between md:h-[350px] mt-[50px] md:mt-[0] px-[20px]">
+                    <h1 class="text-center my-[50px] font-bold text-4xl md:text-[60px] md:font-normal md:my-[0px]">Contacto</h1>
+                    <form class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:flex md:flex-col md:mr-[20px]">
+                            <label for="nombre" class="font-medium mr-[10px] md:font-normal md:mb-[5px]">Nombre</label>
+                            <input type="text" id="nombre" placeholder="  Ingrese su nombre" class="w-[350px] border-solid border-[1px] border-grey rounded-xl pl-[5px] mb-[20px]">
+                            <label for="apellido" class="font-medium mr-[10px] md:font-normal md:mt-[15px] md:mb-[5px]">Apellido</label>
+                            <input type="text" id="apellido" placeholder="  Ingrese su apellido" class="w-[350px] border-solid border-[1px] border-grey rounded-xl pl-[5px] mb-[20px]">
+                        </div>
+
+                        <div class="mt-[15px] md:m-[0] md:flex md:flex-col">
+                            <label for="mensaje" class="font-medium mr-[10px] md:font-normal">Mensaje</label>
+                            <textarea placeholder="  Ingrese su mensaje" class="w-[350px] h-[100px] border-solid border-[1px] border-grey rounded-xl pl-[5px] mb-[30px]"></textarea>
+                        </div>
+                    </form>
+                    <button class="rounded-xl bg-[#5227CC] text-white text-center w-[100px] h-[30px]  font-bold md:w-[150px] md:h-[40px] md:rounded-3xl hover:bg-[#7749f8]">ENVIAR</button>
+                </div>
+            </section>
+
+            <!-- FIN CONTACTO -->
+
+        </main>
+
+        <!-- FIN MAIN -->
+
+        <!-- INICIO FOOTER -->
+
+        <footer>
+            <div class="bg-[#5227CC] h-[10px] mt-[50px]"></div>
+            <hr class="text-white">
+            <div class="bg-gradient-to-r from-[#7749f8] to-[#5227CC]">
+                <div class="flex flex-col items-center md:flex-row md:justify-between md:px-[150px] md:items-start">
+                    <div class="md:flex md:w-[50%] md:mt-[30px]">
+                        <img src="materiales/logo-blanco.png" alt="logo" class="md:h-[40px] w-[200px] mb-[30px] mt-[30px] md:m-[0px]">
+                        <div class="text-center text-white md:text-left md:ml-[75px]">
+                            <ul class="mb-[30px]">
+                                <li><a href="#nosotros">Nosotros</a></li>
+                                <li><a href="#noticiasMobile">Noticias</a></li>
+                                <li><a href="#contacto">Contacto</a></li>
+                                <li><a href="#">Términos y condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-white md:mt-[30px] md:mr-[100px]">
+                        <p class="text-[20px] text-center">Seguinos!</p>
+                        <div class="flex mt-[30px] justify-center mb-[30px] md:mt-[10px]">
+                            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f fa-2xl mr-[15px] md:text-lg"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter fa-2xl mr-[15px] md:text-lg"></i></a>
+                            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-2xl md:text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-white">
+                <div class="text-center h-[50px] flex flex-col justify-center text-white md:text-black">
+                    <p>Copyright © 2021. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- FIN FOOTER -->
+
+    </body>
+
+    <!-- FIN BODY -->
+
+</html>
+
+<!-- FIN SITIO WEB -->
